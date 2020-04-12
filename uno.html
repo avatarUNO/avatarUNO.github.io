@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Curso JavaScript aprenderaprogramar.com</title>
+<meta charset="utf-8">
+
+<style type="text/css">
+body {font-family: sans-serif; text-align:center; }
+#nodoRaiz {border-style:solid;margin: 30px; padding:25px; display:inline-block;}
+.nodoHijo {background-color: yellow; border-style:solid;margin: 20px; padding:15px; display:inline-block;}
+#contenedor {width:405px;margin: 0 auto;}
+#adelante, #atras {padding:15px; width: 130px; float: left; margin-left:20px;
+color: white; border-radius: 40px; background: rgb(202, 60, 60);}
+#adelante:hover, #atras:hover {background: rgb(66, 184, 221);}
+</style>
+
+<script type="text/javascript">
+var contador = 1
+function crearNodoHijo(nodoPadre) {
+                var nodoHijo = document.createElement("div");
+                var nodoTexto = document.createTextNode("Soy el nodo hijo "+contador);
+                nodoHijo.className = 'nodoHijo';
+                nodoHijo.appendChild(nodoTexto);
+                nodoPadre.appendChild(nodoHijo);
+                contador = contador +1;
+}
+function cambiarNodo() {
+                var nodosHijos = document.querySelectorAll('.nodoHijo');
+                var nodoPadre = document.querySelector('#nodoRaiz');
+                if (nodosHijos.length>1) { //Si hay nodos que se puedan cambiar
+                var tmpNodo = nodosHijos[0].cloneNode(true);
+                nodoPadre.replaceChild(nodosHijos[nodosHijos.length-1], nodosHijos[0]);
+                nodoPadre.appendChild(tmpNodo);
+                }
+}
+</script>
+</head>
+<body>
+<div id="nodoRaiz">
+Contenido inicial es este texto
+</div>
+<div id="contenedor">
+<div id ="atras" onclick="crearNodoHijo(document.querySelector('#nodoRaiz'))"> A�adir </div>
+<div id="adelante" onclick="cambiarNodo()" > Cambiar </div>
+</div>
+</body>
+</html>
