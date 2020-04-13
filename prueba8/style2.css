@@ -1,0 +1,53 @@
+* {
+  font-family: Courier;
+  font-size: 20pt;
+}
+/* PANTALLA DONDE SE VE EL CHAT
+.chat {
+  width: 98%;
+  height: 90%;
+  position: fixed;
+  overflow: scroll;
+}
+
+/* BASE DE ACTIONS..
+.actions {
+  position: fixed;
+  bottom: 0; .......ABAJO?
+  display: block;
+  width: 100%;
+}
+ 
+/* EL INPUT 
+.actions input{
+  height: 30px;
+  display: block;
+  width: 98%;
+  outline: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background: black;
+  color: white;
+}
+*/
+/* ESTO ES LA CAJA BASE DE LOS MENSAJES */
+.messages div {
+  max-width: 60%;
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 7px;
+}
+/* AQUI AÑADE DIFERENCIAS SEGÚN HABLE UNO U OTRO */
+.messages .bot {
+  text-align: left; /* CENTRADO A LA IZQUIERDA */
+  margin-right: auto;
+  background: lightblue; /* COLOR DE FONDO */
+}
+
+.messages .self {
+  text-align: right; /* A LA DERECHAS */
+  margin-left: auto;
+  background: #DDD; /* COLOR DE FONDO */
+}

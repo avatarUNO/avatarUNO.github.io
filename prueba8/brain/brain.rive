@@ -1,0 +1,87 @@
+! version = 2.0
+//! local concat = newline
+
+/* begin añade ANTES y DESPUES de la respuesta({ok})..
+  "antes" podria ser una foto ?
+> begin
+        + request
+        - <img src='/Users/usuario/Downloads/Narrativos/Monogatari/img/icons/icon_70x70.png'> {ok} 
+< begin
+ */
+
+// INFLUIR EN VN
+
++ boton
+- <button onclick="say('lolo')">Defecto</button>__
+^ <button onclick="say('cuñaoo')">new</button> __
+^ <button onclick="inicio()">SALIR</button> __
+
+/* //////////////////// 
+				
+*/ ////////////////////
+
+> object say javascript
+        message_container.innerHTML = "";
+< object
+
++ say 
+- <call>say</call>
+
+/* //////////////////// 
+				
+*/ ////////////////////
+
+/* //////////////////// 
+				
+*/ ////////////////////
+
+> object click javascript
+	var click;
+	click = "Ckick..Click";
+	return click;
+< object
+
++ click js 
+- <call>click</call>
+
+/* //////////////////// 
+				
+*/ ////////////////////
+// DEFAULT
+
++ on
+- funciona!!
+
++ adios
+- no me funciona, \n
+^ aun no puedo responder
+
++ *
+- dices <star>
+
++ dime (caca|casa) 
+- digo <star>
+
++ eres [feo]
+- tu mas
+
++ tienes [casa|dinero|trabajo]
+- no te importa
+
++ [*] pez [*]
+- odio al pez
+
++ web
+- <a href= "www.com.com">click</a>
+
+
+// SET Y GET
+
++ mi nombre es *
+- <set name=<star>> un placer <get name>
+
++ dime mi nombre
+- eres <get name>
+
+
+
